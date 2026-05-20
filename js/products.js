@@ -7,51 +7,77 @@ const filterBtn = document.getElementById("filter-btn");
 const filterPanel = document.getElementById("filter-panel");
 const cartCount = document.querySelector(".cart-count");
 
-if (cartCount) { cartCount.innerText = Number(localStorage.getItem("cartCount")) || 0; }
+if (cartCount) {
+    cartCount.innerText = Number(localStorage.getItem("cartCount")) || 0;
+}
 
-if (filterBtn && filterPanel) { filterBtn.addEventListener("click", () => { filterPanel.classList.toggle("active"); }); }
+if (filterBtn && filterPanel) {
+    filterBtn.addEventListener(
+        "click",
+        () => {
+            filterPanel.classList.toggle(
+                "active"
+            );
+
+        }
+    );
+}
 
 function generateStars(rating) {
     let starsHTML = "";
     for (let i = 1; i <= 5; i++) {
-        starsHTML += i <= rating ? `<i class="fa-solid fa-star"></i>` : `<i class="fa-regular fa-star"></i>`;
+        if (i <= rating) {
+            starsHTML += `<i class="fa-solid fa-star"></i>`;
+        } else {
+            starsHTML += `<i class="fa-regular fa-star"></i>`;
+        }
     }
     return starsHTML;
-}
-
-function getImagePath(imagePath) {
-    return imagePath.startsWith("./") ? imagePath : `./${imagePath}`;
 }
 
 function createProductCard(product) {
     return `
     <article class="product-card">
-        <a href="product-detail.html?id=${product.id}" class="product-image">
-            <img src="${getImagePath(product.image)}" alt="${product.name}"/>
+      <a href="product-detail.html?id=${product.id}" class="product-image">
+        <img src="${product.image}" alt="${product.name}"/>
+      </a>
+
+      <div class="product-info">
+        <a href="product-detail.html?id=${product.id}" class="product-title">
+          <h3>
+            ${product.name}
+          </h3>
         </a>
 
-        <div class="product-info">
-            <a href="product-detail.html?id=${product.id}" class="product-title">
-                <h3>${product.name}</h3>
-            </a>
-            
-            <div class="price">
-                <span class="new-price">$${product.price.toFixed(2)}</span>
-                ${product.oldPrice ? `<span class="old-price">$${product.oldPrice.toFixed(2)}</span>` : ""}
-            </div>
+        <div class="price">
 
-            <div class="ratings">
-                <div class="stars">${generateStars(product.rating)}</div>
-                  <span>${product.reviews} Reviews</span>
-            </div>
+          <span class="new-price">
+            $${product.price.toFixed(2)}
+          </span>
+
+          ${product.oldPrice
+            ? `
+                <span class="old-price">
+                  $${product.oldPrice.toFixed(2)}
+                </span>
+              `
+            : ""
+        }
         </div>
+
+        <div class="ratings">
+          <div class="stars">${generateStars(product.rating)}</div>
+          <span>${product.reviews} Reviews</span>
+        </div>
+      </div>
     </article>
-`;
+
+  `;
 }
 
 function renderProducts(productsArray) {
-    if (!productGrid) return;
 
+    if (!productGrid) return;
     productGrid.innerHTML = "";
 
     if (productCount) {
@@ -59,7 +85,13 @@ function renderProducts(productsArray) {
     }
 
     if (productsArray.length === 0) {
-        productGrid.innerHTML = `<div class="no-products"><h2>No Products Found</h2></div>`;
+        productGrid.innerHTML = `
+        <div class="no-products">
+            <h2>
+            No Products Found
+            </h2>
+        </div>
+    `;
         return;
     }
 
@@ -78,7 +110,6 @@ function getSelectedRating() {
 
 function filterProducts() {
     let filteredProducts = [...products];
-
     const selectedCategories = getSelectedCategories();
 
     if (selectedCategories.length > 0) {
@@ -86,39 +117,44 @@ function filterProducts() {
     }
 
     const selectedRating = getSelectedRating();
-
     if (selectedRating > 0) {
         filteredProducts = filteredProducts.filter(product => product.rating >= selectedRating);
     }
-
     return filteredProducts;
 }
 
 function sortProducts(productsArray) {
     const sortedProducts = [...productsArray];
-
     switch (sortSelect.value) {
-
         case "low-high":
-            sortedProducts.sort((a, b) => a.price - b.price);
+            sortedProducts.sort(
+                (a, b) => a.price - b.price
+            );
             break;
 
         case "high-low":
-            sortedProducts.sort((a, b) => b.price - a.price);
+            sortedProducts.sort(
+                (a, b) => b.price - a.price
+            );
             break;
 
         case "rating":
-            sortedProducts.sort((a, b) => b.rating - a.rating);
+            sortedProducts.sort(
+                (a, b) => b.rating - a.rating
+            );
             break;
 
         case "name":
-            sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+            sortedProducts.sort(
+                (a, b) => a.name.localeCompare(b.name)
+            );
             break;
 
         default:
-            sortedProducts.sort((a, b) => a.id - b.id);
+            sortedProducts.sort(
+                (a, b) => a.id - b.id
+            );
     }
-
     return sortedProducts;
 }
 
@@ -140,4 +176,7 @@ ratingFilters.forEach(filter => {
     filter.addEventListener("change", filterAndSortProducts);
 });
 
-document.addEventListener("DOMContentLoaded", () => { renderProducts(products); });
+document.addEventListener(
+    "DOMContentLoaded",
+    () => { renderProducts(products); }
+);

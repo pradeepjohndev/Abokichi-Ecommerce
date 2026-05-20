@@ -12,18 +12,14 @@ const productStars = document.getElementById("product-stars");
 const breadcrumbProduct = document.querySelector(".breadcrumb span");
 const mainImage = document.getElementById("mainImage");
 const thumbnailContainer = document.getElementById("thumbnailContainer");
-const tabButtons = document.querySelectorAll(".tab-btn");
 
+const tabButtons = document.querySelectorAll(".tab-btn");
 const tabPanels = document.querySelectorAll(".tab-panel");
 const wishlistBtn = document.getElementById("wishlist-btn");
 const toggle = document.getElementById("toggle");
 const cartCount = document.getElementById("cart-count");
 const addToCartBtn = document.querySelector(".button-group .cart-btn");
 const buyNowBtn = document.querySelector(".button-group .buy-btn");
-
-function getImagePath(imagePath) {
-    return imagePath.startsWith("./") ? imagePath : `./${imagePath}`;
-}
 
 function updateCartCount(count) {
     localStorage.setItem("cartCount", String(count));
@@ -37,7 +33,7 @@ updateCartCount(Number(localStorage.getItem("cartCount")) || 0);
 if (!product) {
     document.body.innerHTML = `
     <h1 style="display:flex;justify-content:center;align-items:center;height:100vh;font-family:Poppins;">
-        Product Not Found
+      Product Not Found
     </h1>`;
     throw new Error("Product not found");
 }
@@ -53,7 +49,8 @@ if (product.oldPrice) {
 
 productReviews.innerText = `${product.reviews} Reviews`;
 productDescription.innerText = product.description;
-mainImage.src = getImagePath(product.image);
+
+mainImage.src = product.image;
 
 if (breadcrumbProduct) {
     breadcrumbProduct.innerText = product.name;
@@ -62,56 +59,66 @@ if (breadcrumbProduct) {
 let starsHTML = "";
 
 for (let i = 1; i <= 5; i++) {
-    starsHTML += i <= product.rating ? `<i class="fa-solid fa-star"></i>` : `<i class="fa-regular fa-star"></i>`;
+    if (i <= product.rating) {
+        starsHTML += `<i class="fa-solid fa-star"></i>`;
+    } else {
+        starsHTML += `<i class="fa-regular fa-star"></i>`;
+    }
 }
 
 productStars.innerHTML = starsHTML;
 thumbnailContainer.innerHTML = "";
 
-const productImages = product.thumbnails && product.thumbnails.length > 0 ? product.thumbnails : [product.image];
+const productImages =
+    product.thumbnails && product.thumbnails.length > 0
+        ? product.thumbnails
+        : [product.image];
 
-productImages.forEach((image, index) => {
-    thumbnailContainer.innerHTML += `
-    <img src="${getImagePath(image)}" class="thumbnail ${index === 0 ? "active-thumb" : ""}"/>`;
-});
+productImages.forEach(
+    (image, index) => {
+        thumbnailContainer.innerHTML += `
+      <img src="${image}" alt="${product.name} thumbnail ${index + 1}" class="thumbnail ${index === 0 ? "active-thumb" : ""}"/>`;
+    }
+);
 
-document.querySelectorAll(".thumbnail").forEach(thumbnail => {
+const thumbnails = document.querySelectorAll(".thumbnail");
+
+thumbnails.forEach(thumbnail => {
     thumbnail.addEventListener("click", () => {
         mainImage.src = thumbnail.src;
-        document.querySelectorAll(".thumbnail").forEach(item => item.classList.remove("active-thumb"));
+        thumbnails.forEach(item => item.classList.remove("active-thumb")
+        );
         thumbnail.classList.add("active-thumb");
-    });
+    }
+    );
 });
 
 tabButtons.forEach(button => {
     button.addEventListener("click", () => {
         const target = button.dataset.tab;
-
         tabButtons.forEach(btn => btn.classList.remove("active-tab"));
         tabPanels.forEach(panel => panel.classList.remove("active-panel"));
 
         button.classList.add("active-tab");
         document.getElementById(target).classList.add("active-panel");
-    });
+    }
+    );
 });
 
-if (wishlistBtn) {
-    wishlistBtn.addEventListener("click", () => {
-        if (toggle.classList.contains("fa-regular")) {
-            toggle.classList.remove("fa-regular");
-            toggle.classList.add("fa-solid");
-            toggle.style.color = "red";
-        } else {
-            toggle.classList.remove("fa-solid");
-            toggle.classList.add("fa-regular");
-            toggle.style.color = "";
-        }
-    });
-}
+wishlistBtn.addEventListener("click", () => {
+    if (toggle.classList.contains("fa-regular")) {
+        toggle.classList.remove("fa-regular");
+        toggle.classList.add("fa-solid");
+        toggle.style.color = "red";
+    } else {
+        toggle.classList.remove("fa-solid");
+        toggle.classList.add("fa-regular");
+        toggle.style.color = "";
+    }
+});
 
 [addToCartBtn, buyNowBtn].forEach(button => {
     if (!button) return;
-
     button.addEventListener("click", () => {
         const currentCount = Number(localStorage.getItem("cartCount")) || 0;
         updateCartCount(currentCount + 1);

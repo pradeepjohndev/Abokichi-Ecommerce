@@ -77,7 +77,7 @@ const products = [
             "Healthy Japanese noodle bowl with fresh vegetables and umami broth."
     }
     , {
-        id: 1,
+        id: 7,
         name: "OKAZU Lovers Set",
         category: "Miso",
         price: 135.00,
@@ -90,7 +90,7 @@ const products = [
     },
 
     {
-        id: 2,
+        id: 8,
         name: "OKAZU - CHILI MISO",
         category: "Organic",
         price: 13.99,
@@ -103,7 +103,7 @@ const products = [
     },
 
     {
-        id: 3,
+        id: 9,
         name: "Instant Miso Soup Tasting Set",
         category: "Soup",
         price: 19.99,
@@ -116,7 +116,7 @@ const products = [
     },
 
     {
-        id: 4,
+        id: 10,
         name: "ABO Matcha Organic",
         category: "Tea",
         price: 34.00,
@@ -129,7 +129,7 @@ const products = [
     },
 
     {
-        id: 5,
+        id: 11,
         name: "Organic White Miso",
         category: "Miso",
         price: 22.00,
@@ -142,7 +142,7 @@ const products = [
     },
 
     {
-        id: 6,
+        id: 12,
         name: "Japanese Noodle Bowl",
         category: "Soup",
         price: 16.50,

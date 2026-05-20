@@ -332,7 +332,7 @@ button {
 .video-section {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url("../Assets/image/video-image.jpg");
+    url("../assets/image/video-image.jpg");
   background-size: cover;
   background-position: center;
   height: 500px;
