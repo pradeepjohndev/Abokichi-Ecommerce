@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products | Abokichi</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/products.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="top-bar">
+        <div class="top-left">
+          <div class="currency-selection">
+            <select class="currency">
+              <option value="INR">INR</option>
+              <option value="USD">USD</option>
+              <option value="POUND">POUND</option>
+              <option value="YEN">YEN</option>
+            </select>
+          </div>
+
+          <div class="store-location">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Stores</span>
+          </div>
+        </div>
+
+        <div class="top-right">
+          <a href="#"> Login / Register </a>
+        </div>
+      </div>
+
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html">
+            <img src="./Assets/icon/logo.png" alt="Abokichi Logo" />
+          </a>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="products.html"> Shop </a></li>
+          <li><a href="#"> Our Story </a></li>
+          <li><a href="#"> Recipes </a></li>
+          <li><a href="#"> Contact </a></li>
+        </ul>
+
+        <div class="nav-icons">
+          <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+
+          <button>
+            <i class="fa-regular fa-heart"></i>
+          </button>
+
+          <button class="cart-btn">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-count"> 0 </span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="products-hero">
+        <div class="products-overlay">
+          <h1>PRODUCTS</h1>
+        </div>
+      </section>
+
+      <section class="products-section">
+        <div class="products-top">
+          <h2>Products<span id="product-count">(0)</span></h2>
+        </div>
+
+        <div class="filter-sort-bar">
+          <div class="left-controls">
+            <button id="filter-btn" class="filter-btn">
+              <i class="fa-solid fa-filter"></i>
+              Filter
+            </button>
+
+            <div class="grid-icons">
+              <button>
+                <i class="fa-solid fa-grip"></i>
+              </button>
+
+              <button>
+                <i class="fa-solid fa-table-cells-large"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="sort-wrapper">
+            <label for="sort"> Sort By: </label>
+
+            <select id="sort">
+              <option value="default">Alphabetically, A-Z</option>
+              <option value="low-high">Price Low to High</option>
+              <option value="high-low">Price High to Low</option>
+              <option value="rating">Rating</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="filter-panel" id="filter-panel">
+          <div class="filter-column">
+            <h3>Categories</h3>
+            <label>
+              <input type="checkbox" value="Miso" class="category-filter" />
+              Chili oilOkazu
+            </label>
+
+            <label>
+              <input type="checkbox" value="Soup" class="category-filter" />
+              Miso Soup
+            </label>
+
+            <label>
+              <input type="checkbox" value="Tea" class="category-filter" />
+              Instant Matcha
+            </label>
+
+            <label>
+              <input
+                type="checkbox"
+                value="Organic"
+                class="category-filter"
+              />Coffee
+            </label>
+          </div>
+
+          <div class="filter-column">
+            <h3>Type</h3>
+            <label>
+              <input type="checkbox" value="single" class="type-filter" />Single
+              Pack
+            </label>
+            <label>
+              <input type="checkbox" value="multi" class="type-filter" />Multi
+              Set
+            </label>
+          </div>
+
+          <div class="filter-column">
+            <h3>Flavours</h3>
+            <label>
+              <input
+                type="radio"
+                name="rating"
+                value="5"
+                class="rating-filter"
+              />
+              5 Star
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="rating"
+                value="4"
+                class="rating-filter"
+              />
+              4 Star & Above
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="rating"
+                value="3"
+                class="rating-filter"
+              />
+              3 Star & Above
+            </label>
+          </div>
+        </div>
+        <div class="products-grid" id="product-grid"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>LINKS</h4>
+          <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Customer Service</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>INFORMATION</h4>
+          <ul>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Refund policy</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="payment-methods">
+        <i class="fa-brands fa-cc-visa"></i>
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-brands fa-apple-pay"></i>
+        <i class="fa-brands fa-cc-amex"></i>
+      </div>
+    </footer>
+
+    <div class="Bottom-line">
+      <div class="social-media">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+      <div class="rights">
+        <p><i class="fa-regular fa-copyright"></i> 2025 Abokichi</p>
+      </div>
+    </div>
+
+    <script src="./js/data.js"></script>
+    <script src="./js/products.js"></script>
+  </body>
+</html>

@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Detail | Abokichi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/details.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="top-bar">
+        <div class="top-left">
+          <div class="currency-selection">
+            <select class="currency">
+              <option value="INR">INR</option>
+              <option value="USD">USD</option>
+              <option value="POUND">POUND</option>
+              <option value="YEN">YEN</option>
+            </select>
+          </div>
+
+          <div class="store-location">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Stores</span>
+          </div>
+        </div>
+
+        <div class="top-right">
+          <a href="#">Login / Register</a>
+        </div>
+      </div>
+
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html">
+            <img src="./Assets/icon/logo.png" alt="Abokichi Logo" />
+          </a>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="products.html">Shop</a></li>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Recipes</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="nav-icons">
+          <button aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+
+          <button aria-label="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+
+          <button aria-label="Cart" class="">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-count" id="cart-count"> 0 </span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="detail-wrapper">
+      <div class="breadcrumb">
+        <a href="products.html" style="color:rgb(82, 82, 82);text-decoration:underline">Shop ></a><span></span>
+      </div>
+
+      <section class="product-section">
+        <div class="gallery-section">
+          <div class="main-image">
+            <img id="mainImage" src="" alt="Product" />
+          </div>
+
+          <div class="thumbnail-wrapper">
+            <button class="arrow-btn">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div class="thumbnails">
+              <div class="thumbnails" id="thumbnailContainer"></div>
+            </div>
+
+            <button class="arrow-btn">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="product-info">
+          <h1 id="product-title"></h1>
+
+          <div class="price-row">
+            <span class="price" id="product-price"></span>
+            <span class="old-price" id="product-old-price"> </span>
+          </div>
+
+          <div class="rating-row">
+            <div class="stars" id="product-stars"></div>
+            <span id="product-reviews"></span>
+          </div>
+
+          <p class="short-description" id="product-description"></p>
+
+          <div class="button-group">
+            <button class="cart-btn">ADD TO CART</button>
+            <button class="buy-btn">Buy Now</button>
+          </div>
+
+          <button id="wishlist-btn">
+            <i class="fa-regular fa-heart" id="toggle"></i>
+            WISHLIST
+          </button>
+
+          <div class="share-row">
+            <span>SHARE:</span>
+
+            <div class="share-icons">
+              <i class="fa-brands fa-facebook-f"></i>
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-pinterest-p"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tabs-section">
+        <div class="tab-buttons">
+          <button class="tab-btn active-tab" data-tab="description">DESCRIPTION</button>
+          <button class="tab-btn" data-tab="reviews">REVIEWS</button>
+          <button class="tab-btn" data-tab="videos">VIDEOS</button>
+          <button class="tab-btn" data-tab="comments">COMMENTS</button>
+        </div>
+
+        <div class="tab-content">
+          <div class="tab-panel active-panel" id="description">
+            <p>
+              Your new cooking BFF! You can add this to virtually everything.
+              Try it on rice, on meat or tofu, in your burger, ramen and pretty
+              much anything.
+            </p>
+            <br />
+            <p>
+              Chili OKAZU is an umami-rich chili, miso, and sesame oil based
+              condiment often eaten with rice in Japan, which can also be used
+              to top chicken, burgers, fish, eggs, potatoes, and more.
+            </p>
+            <br />
+            <p>
+              Use it as a marinade or as an ingredient in your own homemade
+              salad dressing, this condiment is versatile and we encourage you
+              to experiment.
+            </p>
+            <br />
+            <p>HEAT LEVEL: MILD-MEDIUM</p>
+            <br />
+            <p>
+              INGREDIENTS: SUNFLOWER OIL, SESAME OIL, GARLIC, MISO PASTE, TAMARI
+              SOY SAUCE, CHILI POWDER.
+            </p>
+          </div>
+
+          <div class="tab-panel" id="reviews">
+            <p><i class="" Product!</p>
+          </div>
+
+          <div class="tab-panel" id="videos">
+            <iframe
+              width="100%"
+              height="450"
+              src="https://www.youtube.com/embed/1Ne1hqOXKKI"
+              title="YouTube Video"
+              frameborder="0"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+
+          <div class="tab-panel" id="comments">
+            <p>No comments yet.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+     <footer class="footer">
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>LINKS</h4>
+          <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Customer Service</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>INFORMATION</h4>
+          <ul>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Refund policy</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="payment-methods">
+        <i class="fa-brands fa-cc-visa"></i>
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-brands fa-apple-pay"></i>
+        <i class="fa-brands fa-cc-amex"></i>
+      </div>
+    </footer>
+
+    <div class="Bottom-line">
+      <div class="social-media">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+      <div class="rights">
+        <p><i class="fa-regular fa-copyright"></i> 2025 Abokichi</p>
+      </div>
+    </div>
+    <script src="./js/data.js"></script>
+    <script src="./js/details.js"></script>
+</script>
+  </body>
+</html>

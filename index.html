@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Abokichi</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Abokichi - Nourish Yourself with Miso Goodness"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="Css/Style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="top-bar">
+        <div class="top-left">
+          <div class="currency-selection">
+            <select class="currency">
+              <option value="INR">INR</option>
+              <option value="USD">USD</option>
+              <option value="POUND">POUND</option>
+              <option value="YEN">YEN</option>
+            </select>
+          </div>
+
+          <div class="store-location">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Stores</span>
+          </div>
+        </div>
+
+        <div class="top-right">
+          <a href="#">Login / Register</a>
+        </div>
+      </div>
+
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html">
+            <img src="./Assets/icon/logo.png" alt="Abokichi Logo" />
+          </a>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="products.html">Shop</a></li>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Recipes</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="nav-icons">
+          <button aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+
+          <button aria-label="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+
+          <button aria-label="Cart" class="cart-btn">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-count" id="cart-count"> 0 </span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="hero-images">
+          <div class="hero-image-left">
+            <img src="./Assets/image/hero-page-left.jpeg" alt="Food Bowl" />
+          </div>
+
+          <div class="hero-image-right">
+            <img src="./Assets/image/hero-page-right.jpeg" alt="Healthy Food" />
+          </div>
+        </div>
+
+        <div class="hero-content">
+          <h1>
+            Nourish <br />
+            Yourself with <br />
+            <span>MISO</span> <br />
+            Goodness
+          </h1>
+
+          <a href="products.html" class="shop-btn"> Shop now </a>
+
+          <p>
+            <strong>Free shipping</strong>
+            within the US for orders of $54 or more
+          </p>
+        </div>
+      </section>
+
+      <section class="feature-bar">
+        <div class="feature-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Vegan</span>
+        </div>
+
+        <div class="feature-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>KETO-friendly</span>
+        </div>
+
+        <div class="feature-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Non-GMO</span>
+        </div>
+
+        <div class="feature-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Organic miso</span>
+        </div>
+
+        <div class="feature-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Gluten-Free</span>
+        </div>
+      </section>
+
+      <section class="story-recipes">
+        <article class="story-card">
+          <img src="./Assets/image/story.jpeg" alt="Our Story" />
+          <h2>Our story</h2>
+        </article>
+
+        <article class="story-card">
+          <img src="./Assets/image/recipe.jpeg" alt="Recipes" />
+          <h2>Recipes</h2>
+        </article>
+      </section>
+
+      <section class="best-sellers">
+        <div class="section-title">
+          <img src="./Assets/icon/logo.png" alt="Logo Icon" />
+          <h2>Best Sellers</h2>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <a href="products.html">
+              <img src="./Assets/image/product1.jpeg" alt="Product 1" />
+            </a>
+            <h3>OKAZU Lovers Set (230ml/12 jars)</h3>
+            <div class="price">
+              <span class="new-price">$135.00</span>
+              <span class="old-price">$167.88</span>
+            </div>
+
+            <div class="ratings">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span>32 Reviews</span>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <a href="products.html">
+              <img src="./Assets/image/product2.jpeg" alt="Product 2" />
+            </a>
+            <h3>OKAZU - CHILI MISO</h3>
+            <div class="price">
+              <span class="new-price">$13.99</span>
+            </div>
+            <div class="ratings">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <span>18 Reviews</span>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <a href="products.html">
+              <img src="./Assets/image/product3.jpeg" alt="Product 3" />
+            </a>
+            <h3>Instant Miso Soup Tasting Set</h3>
+            <div class="price">
+              <span class="new-price">$19.99</span>
+              <span class="old-price">$24.00</span>
+            </div>
+            <div class="ratings">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span>12 Reviews</span>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <a href="products.html">
+              <img src="./Assets/image/product4.jpeg" alt="Product 4" />
+            </a>
+            <h3>ABO Matcha Organic</h3>
+            <div class="price">
+              <span class="new-price">$34.00</span>
+            </div>
+            <div class="ratings">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span>24 Reviews</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="video-section">
+        <div class="video-overlay">
+          <h2>A Cup a Day for a Probiotic Boost</h2>
+          <a
+            href="https://www.youtube.com/watch?v=1Ne1hqOXKKI"
+            target="_blank"
+            class="play-btn"
+            aria-label="Play Video"
+          >
+            <i class="fa-solid fa-play"></i>
+          </a>
+        </div>
+      </section>
+
+      <section class="brand-logos">
+        <img src="./Assets/image/partner-logos.png" alt="Toronto Star" />
+      </section>
+
+      <section class="newsletter">
+        <div class="newsletter-left">
+          <i class="fa-regular fa-paper-plane"></i>
+          <div>
+            <h3>SUBSCRIBE NEWSLETTER</h3>
+            <p>get the latest on sales, new releases and more...</p>
+          </div>
+        </div>
+
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your mail" required />
+          <button type="submit">SUBSCRIBE</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>LINKS</h4>
+          <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Customer Service</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>INFORMATION</h4>
+          <ul>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Refund policy</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="payment-methods">
+        <i class="fa-brands fa-cc-visa"></i>
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-brands fa-apple-pay"></i>
+        <i class="fa-brands fa-cc-amex"></i>
+      </div>
+    </footer>
+
+    <div class="Bottom-line">
+      <div class="social-media">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+      <div class="rights">
+        <p><i class="fa-regular fa-copyright"></i> 2025 Abokichi</p>
+      </div>
+    </div>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>
